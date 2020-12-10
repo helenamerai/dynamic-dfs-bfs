@@ -1,0 +1,214 @@
+$main-theme: #004d90;
+$main-theme-2: #004788;
+$dark: #2b2b2b;
+$light: #eaeaea;
+
+.main-container {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;;
+    padding: 20px;
+
+    .maze-container {
+        width: 100%;
+        display: flex;
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .graph {
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 70%;
+            max-width: 1400px;
+            height: 960px;
+            overflow: auto;
+            background-color: whitesmoke;
+            padding: 20px;
+        }
+
+        .legend-container {
+            width: 30%;
+            padding: 20px;
+            margin-left: 20px;
+
+            .edit-box {
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid $main-theme
+            }
+
+            .resize-grid {
+                margin-bottom: 20px;
+
+                .size {
+                    display: flex;
+                    width: 100%;
+
+                    input {
+                        height: 35px;
+                        padding: 0 0 0 10px;
+                        background-color: #aed8fc;
+                        border: none;
+                        caret-color: $main-theme;
+                        outline-color: $main-theme;
+                        font-size: 14px;
+                        font-weight: 300;
+                        font-family: Roboto;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                        width: 50%;
+                        margin-left: 5px;
+                    }
+
+                    button {
+                        background-color: $main-theme; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 10px 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .source {
+                margin-bottom: 20px;
+                
+                .data {
+                    display: flex;
+                    width: 100%;
+                    
+                    input {
+                        height: 35px;
+                        padding: 0 0 0 10px;
+                        background-color: #aed8fc;
+                        border: none;
+                        caret-color: $main-theme;
+                        outline-color: $main-theme;
+                        font-size: 14px;
+                        font-weight: 300;
+                        font-family: Roboto;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                        width: 50%;
+                        margin-left: 5px;
+                    }
+
+                    button {
+                        background-color: $main-theme; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 10px 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .destination {
+                margin-bottom: 20px;
+
+                .data {
+                    display: flex;
+                    width: 100%;
+                    
+                    input {
+                        height: 35px;
+                        padding: 0 0 0 10px;
+                        background-color: #aed8fc;
+                        border: none;
+                        caret-color: $main-theme;
+                        outline-color: $main-theme;
+                        font-size: 14px;
+                        font-weight: 300;
+                        font-family: Roboto;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                        width: 50%;
+                        margin-left: 5px;
+                    }
+
+                    select {
+                        height: 35px;
+                        padding: 0 0 0 10px;
+                        background-color: #aed8fc;
+                        border: none;
+                        caret-color: $main-theme;
+                        outline-color: $main-theme;
+                        font-size: 14px;
+                        font-weight: 300;
+                        font-family: Roboto;
+                        border-radius: 4px;
+                        margin-right: 10px;
+                        width: 50%;
+                        margin-left: 5px;
+                    }
+
+                    button {
+                        background-color: $main-theme; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 5px 5px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .legend {
+
+                li {
+                    list-style-type:none;
+                    padding-bottom: 10px;
+                }
+                
+                .colorBox {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    display: inline-block;
+                }
+
+                .label {
+                    padding-left: 10px;
+                }   
+            }
+
+            .button {
+                margin-top: 20px;
+    
+                button {
+                    background-color: $dark; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 18px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+    
+                .button-click {
+                    background-color: $main-theme;
+                }
+            }
+        }
+
+    }
+    
+}

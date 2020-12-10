@@ -1,0 +1,90 @@
+<div class="main-container">
+  <div class="maze-container">
+    <div class="graph">
+      <div class="title" style="text-align: center;">
+        <span>{{type === 'bfs'? 'Breadth' : (type === 'dfs')? 'Depth' : 'Breath/Depth'}}-First Search</span>
+      </div>
+      <div style="text-align: center;">
+        <canvas id='grid' (mousedown)="onMouseDown($event)"></canvas>
+      </div>
+    </div>
+    <div class="legend-container">
+      <div class="edit-box">
+        <div class="resize-grid">
+          <div style="font-weight: bold; margin-bottom: 10px;">Grid Size</div>
+          <div class="size">
+            <div style="width: 40%;">Width: <input placeholder="Enter No. of Column" [(ngModel)]="gCol" type="number"
+                [min]=1></div>
+            <div style="width: 40%;">Height: <input placeholder="Enter No. of Row" [(ngModel)]="gRow" type="number"
+                [min]=1></div>
+            <div style="width: 20%;"><button (click)="onGenerateMaze()">Generate Maze</button></div>
+          </div>
+        </div>
+        <div class="source">
+          <div style="font-weight: bold; margin-bottom: 10px;">Source</div>
+          <div style="display: flex">
+            <div class="data">
+              <div style="width: 40%;">X: <input placeholder="Enter Y position" [(ngModel)]="ySource" type="number"
+                  [min]=1 [max]="gCol"></div>
+              <div style="width: 40%;">Y: <input placeholder="Enter X position" [(ngModel)]="xSource" type="number"
+                  [min]=1 [max]="gRow"></div>
+              <div style="width: 20%;"><button (click)="onUpdateStart()">Update Source</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="destination">
+          <div style="font-weight: bold; margin-bottom: 10px;">Destination</div>
+          <div class="data">
+            <div style="width: 40%;">X:
+              <select [(ngModel)]="yEnd">
+                <option *ngFor="let y of colEnd" [value]="y">{{y}}</option>
+              </select>
+            </div>
+            <div style="width: 40%;">Y:
+              <select [(ngModel)]="xEnd">
+                <option *ngFor="let x of rowEnd" [value]="x">{{x}}</option>
+              </select>
+            </div>
+            <div style="width: 20%;"><button (click)="onUpdateEnd()">Update Destination</button></div>
+          </div>
+        </div>
+        <div class="button">
+          <div style="font-weight: bold; margin-bottom: 10px;">Run Path</div>
+          <button (click)="onRunClick('bfs')" [ngClass]="{'button-click': type === 'bfs'}">BFS</button>
+          <button (click)="onRunClick('dfs')" [ngClass]="{'button-click': type === 'dfs'}">DFS</button>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 30px">
+        NOTES: <i>Click on the grid to create wall</i>
+      </div>
+
+      <div class="legend">
+        <ul class="Legend">
+          <li class="Legend-item">
+            <span class="colorBox" style="background-color: yellow;"></span>
+            <span class="label">Source</span>
+          </li>
+          <li class="Legend-item">
+            <span class="colorBox" style="background-color: green;"></span>
+            <span class="label">Destination</span>
+          </li>
+          <li class="Legend-item">
+            <span class="colorBox" style="background-color: #FBD7F0;"></span>
+            <span class="label">Visited Nodes</span>
+          </li>
+          <li class="Legend-item">
+            <span class="colorBox" style="background-color: red;"></span>
+            <span class="label">Shortest Path</span>
+          </li>
+          <li class="Legend-item">
+            <span class="colorBox" style="background-color: black;"></span>
+            <span class="label">Wall</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
